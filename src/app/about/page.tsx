@@ -145,7 +145,7 @@ export default function AboutPage() {
       </section>
 
       {/* Brand Section */}
-      <section ref={parallaxRef} className="relative py-32 px-6 overflow-hidden">
+      <section ref={parallaxRef} style={{ paddingTop: '200px', paddingBottom: '120px' }} className="relative px-6 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
 
         {/* Parallax Background Text */}
@@ -176,7 +176,7 @@ export default function AboutPage() {
       </section>
 
       {/* Philosophy Section */}
-      <section className="py-32 px-6 bg-background">
+      <section style={{ paddingTop: '160px', paddingBottom: '160px' }} className="px-6 bg-background">
         <div className="max-w-4xl mx-auto text-center">
           <FadeIn>
             <h2 className="text-4xl md:text-5xl font-bold mb-12">
@@ -187,18 +187,18 @@ export default function AboutPage() {
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <div className="space-y-8 text-lg md:text-xl text-muted leading-relaxed">
-              <p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '48px' }} className="text-lg md:text-xl text-muted leading-relaxed">
+              <p style={{ lineHeight: '2' }}>
                 작은 아이디어도 소중하게 다룹니다.
                 <br />
                 때로는 그 작은 아이디어가 큰 변화를 만들기도 하니까요.
               </p>
-              <p>
+              <p style={{ lineHeight: '2' }}>
                 완벽을 추구하되, 완벽에 집착하지 않습니다.
                 <br />
                 빠르게 만들고, 빠르게 배우고, 빠르게 개선합니다.
               </p>
-              <p>
+              <p style={{ lineHeight: '2' }}>
                 기술은 수단일 뿐입니다.
                 <br />
                 진짜 목표는 사람들의 삶을 조금 더 편하고 재밌게 만드는 것입니다.
