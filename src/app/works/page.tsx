@@ -39,7 +39,7 @@ export default function WorksPage() {
 
   return (
     <PageTransition>
-      <section className="min-h-screen pt-32 pb-20 px-6 bg-background">
+      <section style={{ paddingTop: '160px' }} className="min-h-screen pb-20 px-6 bg-background">
         <div className="max-w-7xl mx-auto">
           <FadeIn className="mb-16">
             <span className="text-primary text-sm font-medium uppercase tracking-wider">
