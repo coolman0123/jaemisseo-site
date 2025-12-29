@@ -60,16 +60,16 @@ export default function ContactPage() {
 
   return (
     <PageTransition>
-      <section className="min-h-screen pt-32 pb-20 px-6 bg-background">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <section style={{ paddingTop: '160px' }} className="min-h-screen pb-24 px-6 md:px-12 bg-background">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-24">
             {/* Left Column - Info */}
             <div>
               <FadeIn>
-                <span className="text-primary text-sm font-medium uppercase tracking-wider">
+                <span className="text-primary text-sm font-semibold uppercase tracking-widest">
                   Contact Us
                 </span>
-                <h1 className="text-5xl md:text-6xl font-bold mt-4 mb-8 leading-tight">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-6 mb-10 leading-tight tracking-tight">
                   <span className="text-foreground">함께</span>
                   <br />
                   <span className="text-gradient">시작해볼까요?</span>
@@ -77,16 +77,16 @@ export default function ContactPage() {
               </FadeIn>
 
               <FadeIn delay={0.2}>
-                <p className="text-lg text-muted mb-12 leading-relaxed">
+                <p className="text-base md:text-lg text-muted mb-14 leading-loose max-w-md">
                   새로운 프로젝트에 대해 이야기하고 싶으시다면
                   언제든지 연락주세요. 작은 질문도 환영합니다.
                 </p>
               </FadeIn>
 
               <FadeIn delay={0.3}>
-                <div className="space-y-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                <div className="space-y-8">
+                  <div className="flex items-center gap-5">
+                    <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center">
                       <svg
                         className="w-5 h-5 text-primary"
                         fill="none"
@@ -102,18 +102,18 @@ export default function ContactPage() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-sm text-muted">이메일</p>
+                      <p className="text-sm text-muted mb-1">이메일</p>
                       <a
-                        href="mailto:funpeopl.hq@gmail.com"
+                        href="mailto:funpeople.hq@gmail.com"
                         className="text-foreground hover:text-primary transition-colors"
                       >
-                        funpeopl.hq@gmail.com
+                        funpeople.hq@gmail.com
                       </a>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                  <div className="flex items-center gap-5">
+                    <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center">
                       <svg
                         className="w-5 h-5 text-primary"
                         fill="none"
@@ -135,7 +135,7 @@ export default function ContactPage() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-sm text-muted">위치</p>
+                      <p className="text-sm text-muted mb-1">위치</p>
                       <p className="text-foreground">대한민국</p>
                     </div>
                   </div>
@@ -195,13 +195,13 @@ export default function ContactPage() {
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       onSubmit={handleSubmit}
-                      className="space-y-6"
+                      className="space-y-8"
                     >
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div>
                           <label
                             htmlFor="name"
-                            className="block text-sm font-medium mb-2"
+                            className="block text-sm font-medium mb-3"
                           >
                             이름 *
                           </label>
@@ -212,14 +212,14 @@ export default function ContactPage() {
                             required
                             value={formData.name}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 bg-white/[0.02] border border-white/10 rounded-lg focus:outline-none focus:border-primary transition-colors"
+                            className="w-full px-5 py-4 bg-white/[0.02] border border-white/10 rounded-xl focus:outline-none focus:border-primary transition-colors"
                             placeholder="홍길동"
                           />
                         </div>
                         <div>
                           <label
                             htmlFor="email"
-                            className="block text-sm font-medium mb-2"
+                            className="block text-sm font-medium mb-3"
                           >
                             이메일 *
                           </label>
@@ -230,7 +230,7 @@ export default function ContactPage() {
                             required
                             value={formData.email}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 bg-white/[0.02] border border-white/10 rounded-lg focus:outline-none focus:border-primary transition-colors"
+                            className="w-full px-5 py-4 bg-white/[0.02] border border-white/10 rounded-xl focus:outline-none focus:border-primary transition-colors"
                             placeholder="hello@example.com"
                           />
                         </div>
@@ -239,7 +239,7 @@ export default function ContactPage() {
                       <div>
                         <label
                           htmlFor="company"
-                          className="block text-sm font-medium mb-2"
+                          className="block text-sm font-medium mb-3"
                         >
                           회사/조직
                         </label>
@@ -249,7 +249,7 @@ export default function ContactPage() {
                           name="company"
                           value={formData.company}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 bg-white/[0.02] border border-white/10 rounded-lg focus:outline-none focus:border-primary transition-colors"
+                          className="w-full px-5 py-4 bg-white/[0.02] border border-white/10 rounded-xl focus:outline-none focus:border-primary transition-colors"
                           placeholder="회사명 (선택사항)"
                         />
                       </div>
@@ -257,7 +257,7 @@ export default function ContactPage() {
                       <div>
                         <label
                           htmlFor="message"
-                          className="block text-sm font-medium mb-2"
+                          className="block text-sm font-medium mb-3"
                         >
                           메시지 *
                         </label>
@@ -268,7 +268,7 @@ export default function ContactPage() {
                           rows={6}
                           value={formData.message}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 bg-white/[0.02] border border-white/10 rounded-lg focus:outline-none focus:border-primary transition-colors resize-none"
+                          className="w-full px-5 py-4 bg-white/[0.02] border border-white/10 rounded-xl focus:outline-none focus:border-primary transition-colors resize-none"
                           placeholder="프로젝트에 대해 알려주세요..."
                         />
                       </div>
@@ -287,7 +287,7 @@ export default function ContactPage() {
                         <button
                           type="submit"
                           disabled={isSubmitting}
-                          className="w-full py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                          className="w-full py-4 bg-primary text-white font-semibold rounded-xl hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                         >
                           {isSubmitting ? (
                             <>
