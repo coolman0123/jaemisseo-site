@@ -33,6 +33,12 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100vw;
 }
 
 html.lenis,
@@ -61,16 +67,17 @@ body {
   color: var(--foreground);
   font-family: 'Pretendard', system-ui, sans-serif;
   overflow-x: hidden;
-  width: 100%;
-  min-width: 100%;
 }
 
-main {
-  width: 100%;
+main, section, header, footer {
+  width: 100% !important;
+  max-width: 100vw !important;
 }
 
-section {
-  width: 100%;
+/* 내부 컨테이너 중앙 정렬 */
+[class*="max-w-"] {
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 ::selection {
