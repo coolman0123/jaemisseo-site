@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <PageTransition>
-      <section className="min-h-screen pt-32 pb-20 px-6 bg-background">
+      <section style={{ paddingTop: '160px' }} className="min-h-screen pb-20 px-6 bg-background">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-8">
             개인정보처리방침
@@ -134,7 +134,7 @@ export default function PrivacyPage() {
                 </p>
                 <div className="mt-4 p-4 bg-white/[0.02] border border-white/10 rounded-lg">
                   <p className="text-foreground font-medium">개인정보 보호책임자</p>
-                  <p className="text-muted mt-2">이메일: privacy@jaemisseo.com</p>
+                  <p className="text-muted mt-2">이메일: funpeople.hq@gmail.com</p>
                 </div>
               </section>
 
