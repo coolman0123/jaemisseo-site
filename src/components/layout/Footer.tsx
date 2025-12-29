@@ -13,7 +13,7 @@ const footerLinks = [
 export default function Footer() {
   return (
     <footer className="border-t border-white/10 bg-background">
-      <div className="max-w-[1400px] mx-auto px-6 py-16">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo & Description */}
           <div className="space-y-4">
@@ -54,10 +54,10 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-muted">
               <li>
                 <a
-                  href="mailto:funpeopl.hq@gmail.com"
+                  href="mailto:funpeople.hq@gmail.com"
                   className="hover:text-foreground transition-colors"
                 >
-                  funpeopl.hq@gmail.com
+                  funpeople.hq@gmail.com
                 </a>
               </li>
             </ul>
