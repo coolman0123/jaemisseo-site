@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -15,6 +16,7 @@ const navItems = [
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,7 +39,7 @@ export default function Header() {
             : "bg-transparent"
         )}
       >
-        <nav className="max-w-[1400px] mx-auto px-6 py-4 flex items-center justify-between">
+        <nav className="max-w-[1400px] mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
           <Link href="/" className="relative group">
             <motion.span
               className="text-2xl font-bold tracking-tight"
@@ -50,17 +52,30 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <ul className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="relative text-sm font-medium text-muted hover:text-foreground transition-colors group"
-                >
-                  {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-                </Link>
-              </li>
-            ))}
+            {navItems.map((item) => {
+              const isActive = item.href === "/"
+                ? pathname === "/"
+                : pathname.startsWith(item.href);
+              return (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className={cn(
+                      "relative text-sm font-medium transition-colors group",
+                      isActive ? "text-primary" : "text-muted hover:text-foreground"
+                    )}
+                  >
+                    {item.label}
+                    <span
+                      className={cn(
+                        "absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300",
+                        isActive ? "w-full" : "w-0 group-hover:w-full"
+                      )}
+                    />
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
 
           {/* Mobile Menu Button */}
@@ -102,22 +117,30 @@ export default function Header() {
             className="fixed inset-0 z-40 bg-background/95 backdrop-blur-lg md:hidden pt-20"
           >
             <nav className="flex flex-col items-center justify-center h-full gap-8">
-              {navItems.map((item, index) => (
-                <motion.div
-                  key={item.href}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <Link
-                    href={item.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-4xl font-bold text-foreground hover:text-gradient transition-all"
+              {navItems.map((item, index) => {
+                const isActive = item.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(item.href);
+                return (
+                  <motion.div
+                    key={item.href}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
                   >
-                    {item.label}
-                  </Link>
-                </motion.div>
-              ))}
+                    <Link
+                      href={item.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={cn(
+                        "text-4xl font-bold transition-all",
+                        isActive ? "text-gradient" : "text-foreground hover:text-gradient"
+                      )}
+                    >
+                      {item.label}
+                    </Link>
+                  </motion.div>
+                );
+              })}
             </nav>
           </motion.div>
         )}
