@@ -82,20 +82,20 @@ export default function Services() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-36 md:py-48 bg-background relative overflow-hidden">
+    <section ref={sectionRef} style={{ paddingTop: '200px', paddingBottom: '200px' }} className="bg-background relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[150px]" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary/5 rounded-full blur-[120px]" />
 
-      <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20 relative z-10">
-        <FadeIn className="mb-24 text-center">
+      <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
+        <FadeIn className="mb-32 text-center">
           <span className="text-primary text-sm font-semibold uppercase tracking-widest">
             What We Do
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-6 tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-6 mb-8 tracking-tight">
             우리가 하는 일
           </h2>
-          <p className="text-muted text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-muted text-base md:text-lg max-w-2xl mx-auto leading-loose">
             복잡한 기술을 유용한 제품으로 바꿉니다.
             <br />
             아이디어부터 출시까지, 함께 만들어갑니다.
@@ -110,22 +110,22 @@ export default function Services() {
               whileHover={{ y: -5 }}
               transition={{ type: "spring", stiffness: 400, damping: 25 }}
             >
-              <div className="relative p-6 lg:p-8 bg-white/[0.02] border border-white/10 rounded-2xl hover:border-primary/40 transition-all duration-500 hover:bg-white/[0.04]">
+              <div className="relative p-8 lg:p-10 bg-white/[0.02] border border-white/10 rounded-2xl hover:border-primary/40 transition-all duration-500 hover:bg-white/[0.04]">
                 {/* Number background */}
-                <span className="absolute top-6 right-6 text-6xl lg:text-7xl font-black text-white/[0.03] group-hover:text-primary/10 transition-colors duration-500 select-none">
+                <span className="absolute top-8 right-8 text-6xl lg:text-7xl font-black text-white/[0.03] group-hover:text-primary/10 transition-colors duration-500 select-none">
                   {service.number}
                 </span>
 
                 <div className="relative z-10">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-5 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
                     {service.icon}
                   </div>
 
-                  <h3 className="text-lg lg:text-xl font-bold mb-3 text-foreground">
+                  <h3 className="text-xl lg:text-2xl font-bold mb-4 text-foreground">
                     {service.title}
                   </h3>
 
-                  <p className="text-muted leading-relaxed text-sm">
+                  <p className="text-muted leading-relaxed text-sm lg:text-base">
                     {service.description}
                   </p>
                 </div>
