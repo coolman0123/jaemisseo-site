@@ -78,7 +78,7 @@ export default function CTA() {
               style={{ paddingLeft: '56px', paddingRight: '56px' }}
               className="group inline-flex items-center gap-2 py-4 bg-primary text-white font-semibold rounded-full hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 whitespace-nowrap"
             >
-              <span>프로젝트 문의하기</span>
+              <span>협업 문의하기</span>
               <svg
                 className="w-4 h-4 group-hover:translate-x-1 transition-transform"
                 fill="none"
