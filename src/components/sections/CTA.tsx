@@ -35,7 +35,7 @@ export default function CTA() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-36 md:py-48 overflow-hidden bg-background">
+    <section ref={sectionRef} style={{ paddingTop: '200px', paddingBottom: '200px' }} className="relative overflow-hidden bg-background">
       {/* Background Pattern */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
@@ -45,7 +45,7 @@ export default function CTA() {
       <div className="relative z-10 w-full max-w-5xl mx-auto px-6 md:px-8 lg:px-12 text-center">
         <h2
           ref={textRef}
-          className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 leading-tight tracking-tight"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 leading-relaxed tracking-tight"
         >
           <span className="text-foreground">새로운 프로젝트를</span>
           <br />
@@ -53,7 +53,8 @@ export default function CTA() {
         </h2>
 
         <motion.p
-          className="text-base md:text-lg text-muted mb-14 max-w-xl mx-auto leading-relaxed"
+          style={{ marginBottom: '80px' }}
+          className="text-base md:text-lg text-muted max-w-xl mx-auto leading-loose"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -69,12 +70,13 @@ export default function CTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="flex flex-col sm:flex-row items-center justify-center gap-6"
         >
           <MagneticButton>
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded-full hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
+              style={{ paddingLeft: '56px', paddingRight: '56px' }}
+              className="group inline-flex items-center gap-2 py-4 bg-primary text-white font-semibold rounded-full hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 whitespace-nowrap"
             >
               <span>프로젝트 문의하기</span>
               <svg
@@ -89,8 +91,9 @@ export default function CTA() {
           </MagneticButton>
           <MagneticButton>
             <a
-              href="mailto:funpeopl.hq@gmail.com"
-              className="inline-flex items-center gap-2 px-8 py-4 border border-white/15 text-foreground font-semibold rounded-full hover:border-white/30 hover:bg-white/5 transition-all duration-300"
+              href="mailto:funpeople.hq@gmail.com"
+              style={{ paddingLeft: '56px', paddingRight: '56px' }}
+              className="inline-flex items-center gap-2 py-4 border border-white/15 text-foreground font-semibold rounded-full hover:border-white/30 hover:bg-white/5 transition-all duration-300 whitespace-nowrap"
             >
               <span>이메일 보내기</span>
             </a>
@@ -99,18 +102,19 @@ export default function CTA() {
 
         {/* Contact info */}
         <motion.div
-          className="mt-16 pt-16 border-t border-white/10"
+          style={{ marginTop: '80px', paddingTop: '48px' }}
+          className="border-t border-white/10"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.7 }}
         >
-          <p className="text-sm text-muted mb-1">Direct Contact</p>
+          <p className="text-sm text-muted mb-2">Direct Contact</p>
           <a
-            href="mailto:funpeopl.hq@gmail.com"
-            className="text-foreground hover:text-primary transition-colors"
+            href="mailto:funpeople.hq@gmail.com"
+            className="text-lg text-foreground hover:text-primary transition-colors"
           >
-            funpeopl.hq@gmail.com
+            funpeople.hq@gmail.com
           </a>
         </motion.div>
       </div>
