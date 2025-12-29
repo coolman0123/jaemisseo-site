@@ -29,16 +29,16 @@ export default function Projects() {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   return (
-    <section className="py-36 md:py-48 bg-background">
-      <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
-        <FadeIn className="mb-20 text-center">
+    <section style={{ paddingTop: '200px', paddingBottom: '200px' }} className="bg-background">
+      <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12">
+        <FadeIn className="mb-24 text-center">
           <span className="text-primary text-sm font-semibold uppercase tracking-widest">
             Our Works
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-6 tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-6 mb-8 tracking-tight">
             프로젝트
           </h2>
-          <p className="text-muted text-base md:text-lg max-w-xl mx-auto leading-relaxed">
+          <p className="text-muted text-base md:text-lg max-w-xl mx-auto leading-loose">
             우리가 재밌게 만들고 있는 것들입니다.
           </p>
         </FadeIn>
@@ -64,23 +64,23 @@ export default function Projects() {
                     className={`absolute inset-0 bg-gradient-to-br ${project.color}`}
                   />
 
-                  <div className="absolute inset-0 p-6 lg:p-8 flex flex-col justify-between">
+                  <div className="absolute inset-0 p-8 lg:p-10 flex flex-col justify-between">
                     {/* Top Row */}
                     <div className="flex items-start justify-between">
-                      <span className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-xs font-medium">
+                      <span className="px-3 py-1.5 bg-white/10 backdrop-blur-sm rounded-full text-xs font-medium">
                         {project.category}
                       </span>
-                      <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-xs font-medium">
+                      <span className="px-3 py-1.5 bg-primary/20 text-primary rounded-full text-xs font-medium">
                         {project.status}
                       </span>
                     </div>
 
                     {/* Bottom Content */}
                     <div>
-                      <h3 className="text-xl md:text-2xl font-bold mb-2 text-foreground group-hover:text-gradient transition-colors">
+                      <h3 className="text-xl md:text-2xl font-bold mb-3 text-foreground group-hover:text-gradient transition-colors">
                         {project.title}
                       </h3>
-                      <p className="text-muted text-sm">{project.description}</p>
+                      <p className="text-muted text-sm leading-relaxed">{project.description}</p>
                     </div>
                   </div>
 
@@ -90,7 +90,7 @@ export default function Projects() {
                       x: hoveredId === project.id ? 0 : -10,
                       opacity: hoveredId === project.id ? 1 : 0,
                     }}
-                    className="absolute top-6 right-6 p-2 bg-white/10 backdrop-blur-sm rounded-full"
+                    className="absolute top-8 right-8 p-2 bg-white/10 backdrop-blur-sm rounded-full"
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
