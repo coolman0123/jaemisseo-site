@@ -78,8 +78,8 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-16"
         >
-          <span className="inline-block px-4 py-2 text-xs font-medium bg-white/5 border border-white/10 rounded-full text-muted tracking-widest uppercase">
-            Software Company
+          <span className="inline-block px-4 py-2 text-xs font-medium bg-white/5 border border-white/10 rounded-full text-muted tracking-widest">
+            재밌어 · Software Company
           </span>
         </motion.div>
 
@@ -120,7 +120,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-14 md:mt-16 text-base md:text-lg text-muted max-w-md mx-auto leading-relaxed"
+          className="mt-12 text-base md:text-lg text-muted max-w-md mx-auto leading-relaxed"
         >
           아이디어를 현실로 만드는 소프트웨어 회사
         </motion.p>
@@ -130,12 +130,13 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-14 md:mt-16 flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 flex-nowrap"
         >
           <MagneticButton>
             <Link
               href="/works"
-              className="group inline-flex items-center gap-2 px-7 py-3.5 bg-primary text-white text-sm font-medium rounded-full hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
+              style={{ paddingLeft: '56px', paddingRight: '56px' }}
+              className="group inline-flex items-center gap-2 py-4 bg-primary text-white text-xs sm:text-sm font-medium rounded-full hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 whitespace-nowrap"
             >
               <span>프로젝트 보기</span>
               <svg
@@ -151,7 +152,8 @@ export default function Hero() {
           <MagneticButton>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/15 text-foreground text-sm font-medium rounded-full hover:border-white/30 hover:bg-white/5 transition-all duration-300"
+              style={{ paddingLeft: '56px', paddingRight: '56px' }}
+              className="inline-flex items-center gap-2 py-4 border border-white/15 text-foreground text-xs sm:text-sm font-medium rounded-full hover:border-white/30 hover:bg-white/5 transition-all duration-300 whitespace-nowrap"
             >
               <span>문의하기</span>
             </Link>
