@@ -13,7 +13,7 @@ const projects = [
     category: "Mobile App",
     description: "로또 번호 분석 및 통계를 제공하는 스마트한 모바일 앱",
     color: "from-yellow-500 to-orange-500",
-    status: "개발 중",
+    status: "출시 전",
   },
   {
     id: 2,
@@ -22,6 +22,14 @@ const projects = [
     description: "실시간 환율 정보를 한눈에 확인하는 금융 앱",
     color: "from-green-500 to-teal-500",
     status: "개발 중",
+  },
+  {
+    id: 3,
+    title: "2026 메모 캘린더",
+    category: "Mobile App",
+    description: "50개국 지원, 세상에서 제일 간단한 메모 캘린더 앱",
+    color: "from-blue-500 to-purple-500",
+    status: "출시 전",
   },
 ];
 
@@ -64,13 +72,13 @@ export default function Projects() {
                     className={`absolute inset-0 bg-gradient-to-br ${project.color}`}
                   />
 
-                  <div className="absolute inset-0 p-8 lg:p-10 flex flex-col justify-between">
+                  <div className="absolute inset-0 flex flex-col justify-between" style={{ padding: '24px' }}>
                     {/* Top Row */}
-                    <div className="flex items-start justify-between">
+                    <div className="flex flex-wrap items-start justify-between gap-2">
                       <span className="px-3 py-1.5 bg-white/10 backdrop-blur-sm rounded-full text-xs font-medium">
                         {project.category}
                       </span>
-                      <span className="px-3 py-1.5 bg-primary/20 text-primary rounded-full text-xs font-medium">
+                      <span className="px-3 py-1.5 bg-primary/20 text-primary rounded-full text-xs font-medium whitespace-nowrap">
                         {project.status}
                       </span>
                     </div>
