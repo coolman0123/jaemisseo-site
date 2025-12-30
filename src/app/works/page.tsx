@@ -35,6 +35,33 @@ const projects = [
     color: "from-blue-500 to-purple-500",
     status: "출시 전",
   },
+  {
+    id: 4,
+    title: "JLPT 필수 단어장",
+    category: "Mobile App",
+    description: "일본어 능력시험 정복의 지름길. 퀴즈로 외우고, 반복으로 뇌에 새기는 단어 암기 앱입니다.",
+    tags: ["React Native", "TypeScript", "Education"],
+    color: "from-red-500 to-pink-500",
+    status: "개발 중",
+  },
+  {
+    id: 5,
+    title: "마지막 금연",
+    category: "Mobile App",
+    description: "이번엔 진짜 끊는다. 당신의 마지막 금연을 응원하는 동반자 앱입니다.",
+    tags: ["React Native", "TypeScript", "Health"],
+    color: "from-emerald-500 to-cyan-500",
+    status: "개발 중",
+  },
+  {
+    id: 6,
+    title: "마지막 금주",
+    category: "Mobile App",
+    description: "오늘부터 술 끊는다. 건강한 내일을 위한 마지막 금주 도전 앱입니다.",
+    tags: ["React Native", "TypeScript", "Health"],
+    color: "from-violet-500 to-fuchsia-500",
+    status: "개발 중",
+  },
 ];
 
 export default function WorksPage() {
