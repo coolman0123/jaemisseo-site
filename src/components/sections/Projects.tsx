@@ -55,6 +55,14 @@ const projects = [
     color: "from-violet-500 to-fuchsia-500",
     status: "개발 중",
   },
+  {
+    id: 7,
+    title: "Depick",
+    category: "Mobile App",
+    description: "정밀한 매칭으로 만남 성공률 UP. 새로운 인연을 만드는 친구 네트워킹 앱",
+    color: "from-rose-500 to-orange-400",
+    status: "개발 중",
+  },
 ];
 
 export default function Projects() {
