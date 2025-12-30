@@ -269,7 +269,7 @@ export default function ContactPage() {
                           value={formData.message}
                           onChange={handleChange}
                           className="w-full px-5 py-4 bg-white/[0.02] border border-white/10 rounded-xl focus:outline-none focus:border-primary transition-colors resize-none"
-                          placeholder="프로젝트에 대해 알려주세요..."
+                          placeholder="협업하고 싶은 부분에 대해 알려주세요..."
                         />
                       </div>
 
