@@ -15,7 +15,7 @@ const projects = [
     description: "로또 번호 분석 및 통계를 제공하는 스마트한 모바일 앱. 당첨 확률을 높이는 데이터 기반 인사이트를 제공합니다.",
     tags: ["React Native", "TypeScript", "Analytics"],
     color: "from-yellow-500 to-orange-500",
-    status: "개발 중",
+    status: "출시 전",
   },
   {
     id: 2,
@@ -25,6 +25,15 @@ const projects = [
     tags: ["React Native", "TypeScript", "Finance API"],
     color: "from-green-500 to-teal-500",
     status: "개발 중",
+  },
+  {
+    id: 3,
+    title: "2026 메모 캘린더",
+    category: "Mobile App",
+    description: "50개국 지원, 세상에서 제일 간단한 메모 캘린더 앱입니다.",
+    tags: ["React Native", "TypeScript", "Calendar"],
+    color: "from-blue-500 to-purple-500",
+    status: "출시 전",
   },
 ];
 
@@ -99,12 +108,12 @@ export default function WorksPage() {
                     />
 
                     {/* Content */}
-                    <div className="absolute inset-0 p-8 flex flex-col justify-between">
-                      <div className="flex items-start justify-between">
+                    <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-between" style={{ padding: '24px' }}>
+                      <div className="flex flex-wrap items-start justify-between gap-2">
                         <span className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-xs font-medium">
                           {project.category}
                         </span>
-                        <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-xs font-medium">
+                        <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-xs font-medium whitespace-nowrap">
                           {project.status}
                         </span>
                       </div>
