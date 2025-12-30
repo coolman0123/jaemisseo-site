@@ -31,6 +31,30 @@ const projects = [
     color: "from-blue-500 to-purple-500",
     status: "출시 전",
   },
+  {
+    id: 4,
+    title: "JLPT 필수 단어장",
+    category: "Mobile App",
+    description: "퀴즈로 외우고, 반복으로 뇌에 새기는 일본어 단어 암기 앱",
+    color: "from-red-500 to-pink-500",
+    status: "개발 중",
+  },
+  {
+    id: 5,
+    title: "마지막 금연",
+    category: "Mobile App",
+    description: "이번엔 진짜 끊는다. 당신의 마지막 금연 동반자",
+    color: "from-emerald-500 to-cyan-500",
+    status: "개발 중",
+  },
+  {
+    id: 6,
+    title: "마지막 금주",
+    category: "Mobile App",
+    description: "오늘부터 술 끊는다. 건강한 내일을 위한 금주 도전",
+    color: "from-violet-500 to-fuchsia-500",
+    status: "개발 중",
+  },
 ];
 
 export default function Projects() {
