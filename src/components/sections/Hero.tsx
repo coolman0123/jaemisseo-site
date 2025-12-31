@@ -91,11 +91,15 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.15] tracking-tight">
-            <span className="block text-foreground">우리는</span>
-            <span className="block mt-2">
-              <span className="text-gradient">재밌게</span>
+            <span className="block text-foreground" style={{ marginBottom: '6px' }}>
+              우리는
             </span>
-            <span className="block mt-2">
+            <span className="block" style={{ marginBottom: '6px' }}>
+              <span className="text-gradient" style={{ marginBottom: '6px' }}>
+                재밌게
+              </span>
+            </span>
+            <span className="block">
               <span className="inline-flex items-baseline">
                 <span className="h-[1.15em] overflow-hidden inline-block align-bottom">
                   <span className="flex flex-col animate-roll">
@@ -132,7 +136,7 @@ export default function Hero() {
             <Link
               href="/works"
               style={{
-                width: '160px',
+                width: '180px',
                 display: 'flex',
                 justifyContent: 'center',
                 paddingTop: '4px',
@@ -154,7 +158,7 @@ export default function Hero() {
             <Link
               href="/contact"
               style={{
-                width: '160px',
+                width: '180px',
                 display: 'flex',
                 justifyContent: 'center',
                 paddingTop: '4px',
