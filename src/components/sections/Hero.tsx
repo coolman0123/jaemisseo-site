@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { useRef, useEffect } from "react";
-import { motion, useMotionValue, useTransform } from "framer-motion";
-import { gsap } from "@/lib/gsap";
-import MagneticButton from "@/components/animations/MagneticButton";
-import Link from "next/link";
+import { useRef, useEffect } from 'react';
+import { motion, useMotionValue, useTransform } from 'framer-motion';
+import { gsap } from '@/lib/gsap';
+import MagneticButton from '@/components/animations/MagneticButton';
+import Link from 'next/link';
 
-const rollingWords = ["앱", "웹", "게임", "서비스", "무엇이든"];
+const rollingWords = ['앱', '웹', '게임', '서비스', '무엇이든'];
 
 export default function Hero() {
   const heroRef = useRef<HTMLElement>(null);
@@ -26,8 +26,8 @@ export default function Hero() {
       mouseY.set(clientY - innerHeight / 2);
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, [mouseX, mouseY]);
 
   useEffect(() => {
@@ -36,11 +36,11 @@ export default function Hero() {
     const ctx = gsap.context(() => {
       gsap.to(textRef.current, {
         yPercent: -10,
-        ease: "none",
+        ease: 'none',
         scrollTrigger: {
           trigger: heroRef.current,
-          start: "top top",
-          end: "bottom top",
+          start: 'top top',
+          end: 'bottom top',
           scrub: true,
         },
       });
@@ -52,8 +52,7 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
-    >
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       {/* Animated Background Blob - 하나로 단순화 */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -62,8 +61,8 @@ export default function Hero() {
             y: [0, -30, 0],
             scale: [1, 1.1, 1],
           }}
-          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/15 rounded-full blur-[180px]"
+          transition={{ duration: 25, repeat: Infinity, ease: 'easeInOut' }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 bg-primary/15 rounded-full blur-[180px]"
         />
       </div>
 
@@ -76,24 +75,22 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-16"
-        >
-          <span className="inline-block px-4 py-2 text-xs font-medium bg-white/5 border border-white/10 rounded-full text-muted tracking-widest">
-            재밌어 · Software Company
-          </span>
+          style={{ marginBottom: '14px' }}
+          className="mb-16 flex justify-center items-center">
+          <div
+            style={{ paddingLeft: '14px', paddingRight: '14px', paddingTop: '6px', paddingBottom: '6px' }}
+            className="text-xs font-medium bg-white/5 border border-white/10 rounded-full text-muted tracking-widest">
+            <span> 재밌어 · Software Company</span>
+          </div>
         </motion.div>
 
         {/* Main Title with 3D effect */}
-        <motion.div
-          style={{ rotateX, rotateY, perspective: 1000 }}
-          className="transform-gpu"
-        >
+        <motion.div style={{ rotateX, rotateY, perspective: 1000, marginBottom: '14px' }} className="transform-gpu">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.15] tracking-tight"
-          >
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.15] tracking-tight">
             <span className="block text-foreground">우리는</span>
             <span className="block mt-2">
               <span className="text-gradient">재밌게</span>
@@ -120,8 +117,8 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-12 text-base md:text-lg text-muted max-w-md mx-auto leading-relaxed"
-        >
+          style={{ marginBottom: '14px' }}
+          className="mt-12 text-base md:text-lg text-muted max-w-md mx-auto leading-relaxed">
           아이디어를 현실로 만드는 소프트웨어 회사
         </motion.p>
 
@@ -130,21 +127,25 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 flex-nowrap"
-        >
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 flex-nowrap">
           <MagneticButton>
             <Link
               href="/works"
-              style={{ paddingLeft: '56px', paddingRight: '56px' }}
-              className="group inline-flex items-center gap-2 py-4 bg-primary text-white text-xs sm:text-sm font-medium rounded-full hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 whitespace-nowrap"
-            >
+              style={{
+                width: '160px',
+                display: 'flex',
+                justifyContent: 'center',
+                paddingTop: '4px',
+                alignItems: 'center',
+                paddingBottom: '4px',
+              }}
+              className="group inline-flex items-center gap-2 py-4 bg-primary text-white text-xs sm:text-sm font-medium rounded-full hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 whitespace-nowrap">
               <span>프로젝트 보기</span>
               <svg
                 className="w-4 h-4 group-hover:translate-x-0.5 transition-transform"
                 fill="none"
                 stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
+                viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
@@ -152,9 +153,15 @@ export default function Hero() {
           <MagneticButton>
             <Link
               href="/contact"
-              style={{ paddingLeft: '56px', paddingRight: '56px' }}
-              className="inline-flex items-center gap-2 py-4 border border-white/15 text-foreground text-xs sm:text-sm font-medium rounded-full hover:border-white/30 hover:bg-white/5 transition-all duration-300 whitespace-nowrap"
-            >
+              style={{
+                width: '160px',
+                display: 'flex',
+                justifyContent: 'center',
+                paddingTop: '4px',
+                alignItems: 'center',
+                paddingBottom: '4px',
+              }}
+              className="inline-flex items-center gap-2 py-4 border border-white/15 text-foreground text-xs sm:text-sm font-medium rounded-full hover:border-white/30 hover:bg-white/5 transition-all duration-300 whitespace-nowrap">
               <span>문의하기</span>
             </Link>
           </MagneticButton>
@@ -166,13 +173,11 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
+        className="absolute bottom-8 left-1/2 -translate-x-1/2">
         <motion.div
           animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="w-5 h-8 border border-white/20 rounded-full flex items-start justify-center p-1.5"
-        >
+          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+          className="w-5 h-8 border border-white/20 rounded-full flex items-start justify-center p-1.5">
           <motion.div className="w-1 h-1.5 bg-white/40 rounded-full" />
         </motion.div>
       </motion.div>
