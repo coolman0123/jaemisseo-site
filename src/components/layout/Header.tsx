@@ -32,11 +32,12 @@ export default function Header() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
+        style={{ paddingLeft: '14px', paddingRight: '14px' }}
         className={cn(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-300 h-12.5',
           isScrolled ? 'bg-background/80 backdrop-blur-lg border-b border-white/10 ' : 'bg-transparent'
         )}>
-        <nav className="max-w-350 mx-auto px-6 md:px-12 py-4 flex items-center justify-between h-full">
+        <nav className="max-w-350 mx-auto py-4 flex items-center justify-between h-full">
           <Link href="/" className="relative group">
             <motion.span
               className="text-2xl font-bold tracking-tight"
