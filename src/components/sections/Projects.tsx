@@ -72,9 +72,17 @@ export default function Projects() {
     <section style={{ paddingTop: '200px', paddingBottom: '200px' }} className="bg-background">
       <div className="w-full max-w-350 mx-auto px-6 md:px-12">
         <FadeIn className="mb-24 text-center">
-          <span className="text-primary text-sm font-semibold uppercase tracking-widest">Our Works</span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-6 mb-8 tracking-tight">프로젝트</h2>
-          <p className="text-muted text-base md:text-lg max-w-xl mx-auto leading-loose">
+          <span
+            className="text-primary text-sm font-semibold uppercase tracking-widest"
+            style={{ marginBottom: '6px' }}>
+            Our Works
+          </span>
+          <h2
+            className="text-3xl md:text-4xl lg:text-5xl font-bold mt-6 mb-8 tracking-tight"
+            style={{ marginBottom: '6px' }}>
+            프로젝트
+          </h2>
+          <p className="text-muted text-base md:text-lg max-w-xl mx-auto leading-loose" style={{ marginBottom: '6px' }}>
             우리가 재밌게 만들고 있는 것들입니다.
           </p>
         </FadeIn>
@@ -144,7 +152,10 @@ export default function Projects() {
                       x: hoveredId === project.id ? 0 : -10,
                       opacity: hoveredId === project.id ? 1 : 0,
                     }}
-                    className="absolute top-8 right-8 p-2 bg-white/10 backdrop-blur-sm rounded-full">
+                    style={{
+                      padding: '5px',
+                    }}
+                    className="absolute bottom-5 right-2 p-5 bg-white/10 backdrop-blur-sm rounded-full">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
