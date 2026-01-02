@@ -91,7 +91,7 @@ export default function WorksPage() {
           <FadeIn className="mb-16">
             <span className="text-primary text-sm font-medium uppercase tracking-wider">Our Works</span>
             <h1 className="text-5xl md:text-6xl font-bold mt-4 mb-6">프로젝트</h1>
-            <p className="text-muted text-lg max-w-2xl" style={{ marginBottom: '6px' }}>
+            <p className="text-muted text-lg max-w-2xl" style={{ marginBottom: '14px' }}>
               우리가 재밌게 만들고 있는 프로젝트들입니다.
               <br />
               현재 열심히 개발 중이며, 곧 만나볼 수 있습니다.
