@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import FadeIn from "@/components/animations/FadeIn";
-import PageTransition from "@/components/animations/PageTransition";
-import MagneticButton from "@/components/animations/MagneticButton";
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import FadeIn from '@/components/animations/FadeIn';
+import PageTransition from '@/components/animations/PageTransition';
+import MagneticButton from '@/components/animations/MagneticButton';
 
 interface FormData {
   name: string;
@@ -15,18 +15,16 @@ interface FormData {
 
 export default function ContactPage() {
   const [formData, setFormData] = useState<FormData>({
-    name: "",
-    email: "",
-    company: "",
-    message: "",
+    name: '',
+    email: '',
+    company: '',
+    message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -34,25 +32,25 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setError("");
+    setError('');
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
+      const response = await fetch('/api/contact', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
 
       if (!response.ok) {
-        throw new Error("전송에 실패했습니다.");
+        throw new Error('전송에 실패했습니다.');
       }
 
       setIsSubmitted(true);
-      setFormData({ name: "", email: "", company: "", message: "" });
+      setFormData({ name: '', email: '', company: '', message: '' });
     } catch {
-      setError("메시지 전송에 실패했습니다. 다시 시도해주세요.");
+      setError('메시지 전송에 실패했습니다. 다시 시도해주세요.');
     } finally {
       setIsSubmitting(false);
     }
@@ -60,16 +58,20 @@ export default function ContactPage() {
 
   return (
     <PageTransition>
-      <section style={{ paddingTop: '160px' }} className="min-h-screen pb-24 px-6 md:px-12 bg-background">
+      <section
+        style={{ paddingTop: '160px', paddingLeft: '10px', paddingRight: '10px' }}
+        className="min-h-screen pb-24 px-6 md:px-12 bg-background">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-24">
+          <div
+            className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-24"
+            style={{ paddingLeft: '15px', paddingRight: '15px' }}>
             {/* Left Column - Info */}
             <div>
               <FadeIn>
-                <span className="text-primary text-sm font-semibold uppercase tracking-widest">
-                  Contact Us
-                </span>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-6 mb-10 leading-tight tracking-tight">
+                <span className="text-primary text-sm font-semibold uppercase tracking-widest">Contact Us</span>
+                <h1
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold mt-6 mb-10 leading-tight tracking-tight"
+                  style={{ marginBottom: '14px' }}>
                   <span className="text-foreground">함께</span>
                   <br />
                   <span className="text-gradient">시작해볼까요?</span>
@@ -77,22 +79,16 @@ export default function ContactPage() {
               </FadeIn>
 
               <FadeIn delay={0.2}>
-                <p className="text-base md:text-lg text-muted mb-14 leading-loose max-w-md">
-                  새로운 프로젝트에 대해 이야기하고 싶으시다면
-                  언제든지 연락주세요. 작은 질문도 환영합니다.
+                <p className="text-base md:text-lg text-muted mb-14 leading-loose" style={{ marginBottom: '14px' }}>
+                  새로운 프로젝트에 대해 이야기하고 싶으시다면 언제든지 연락주세요. 작은 질문도 환영합니다.
                 </p>
               </FadeIn>
 
               <FadeIn delay={0.3}>
                 <div className="space-y-8">
-                  <div className="flex items-center gap-5">
-                    <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center">
-                      <svg
-                        className="w-5 h-5 text-primary"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
+                  <div className="flex items-center gap-5" style={{ marginBottom: '14px' }}>
+                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                      <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
@@ -105,21 +101,15 @@ export default function ContactPage() {
                       <p className="text-sm text-muted mb-1">이메일</p>
                       <a
                         href="mailto:funpeople.hq@gmail.com"
-                        className="text-foreground hover:text-primary transition-colors"
-                      >
+                        className="text-foreground hover:text-primary transition-colors">
                         funpeople.hq@gmail.com
                       </a>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-5">
-                    <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center">
-                      <svg
-                        className="w-5 h-5 text-primary"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
+                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                      <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
@@ -153,38 +143,19 @@ export default function ContactPage() {
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.9 }}
-                      className="bg-white/[0.02] border border-white/10 rounded-2xl p-12 text-center"
-                    >
+                      className="bg-white/2 border border-white/10 rounded-2xl p-12 text-center">
                       <motion.div
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
-                        transition={{ type: "spring", delay: 0.2 }}
-                        className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6"
-                      >
-                        <svg
-                          className="w-10 h-10 text-green-500"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
+                        transition={{ type: 'spring', delay: 0.2 }}
+                        className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg className="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </motion.div>
-                      <h3 className="text-2xl font-bold mb-4">
-                        메시지가 전송되었습니다!
-                      </h3>
-                      <p className="text-muted mb-8">
-                        빠른 시일 내에 답변 드리겠습니다.
-                      </p>
-                      <button
-                        onClick={() => setIsSubmitted(false)}
-                        className="text-primary hover:underline"
-                      >
+                      <h3 className="text-2xl font-bold mb-4">메시지가 전송되었습니다!</h3>
+                      <p className="text-muted mb-8">빠른 시일 내에 답변 드리겠습니다.</p>
+                      <button onClick={() => setIsSubmitted(false)} className="text-primary hover:underline">
                         새 메시지 보내기
                       </button>
                     </motion.div>
@@ -195,14 +166,19 @@ export default function ContactPage() {
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       onSubmit={handleSubmit}
-                      className="space-y-8"
-                    >
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      className="space-y-8">
+                      <div
+                        className="grid grid-cols-1 md:grid-cols-2 gap-4"
+                        style={{
+                          marginBottom: '16px',
+                        }}>
                         <div>
                           <label
                             htmlFor="name"
                             className="block text-sm font-medium mb-3"
-                          >
+                            style={{
+                              marginBottom: '4px',
+                            }}>
                             이름 *
                           </label>
                           <input
@@ -212,15 +188,24 @@ export default function ContactPage() {
                             required
                             value={formData.name}
                             onChange={handleChange}
-                            className="w-full px-5 py-4 bg-white/[0.02] border border-white/10 rounded-xl focus:outline-none focus:border-primary transition-colors"
+                            style={{
+                              paddingLeft: '15px',
+                              paddingRight: '15px',
+                              paddingTop: '2px',
+                              paddingBottom: '2px',
+                              borderRadius: '8px',
+                            }}
+                            className="w-full px-5 py-4 bg-white/2 border border-white/10 focus:outline-none focus:border-primary transition-colors"
                             placeholder="홍길동"
                           />
                         </div>
                         <div>
                           <label
                             htmlFor="email"
-                            className="block text-sm font-medium mb-3"
-                          >
+                            className="block text-sm font-medium"
+                            style={{
+                              marginBottom: '4px',
+                            }}>
                             이메일 *
                           </label>
                           <input
@@ -230,17 +215,29 @@ export default function ContactPage() {
                             required
                             value={formData.email}
                             onChange={handleChange}
-                            className="w-full px-5 py-4 bg-white/[0.02] border border-white/10 rounded-xl focus:outline-none focus:border-primary transition-colors"
+                            style={{
+                              paddingLeft: '15px',
+                              paddingRight: '15px',
+                              paddingTop: '2px',
+                              paddingBottom: '2px',
+                              borderRadius: '8px',
+                            }}
+                            className="w-full px-5 py-4 bg-white/2 border border-white/10  focus:outline-none focus:border-primary transition-colors"
                             placeholder="hello@example.com"
                           />
                         </div>
                       </div>
 
-                      <div>
+                      <div
+                        style={{
+                          marginBottom: '16px',
+                        }}>
                         <label
                           htmlFor="company"
                           className="block text-sm font-medium mb-3"
-                        >
+                          style={{
+                            marginBottom: '4px',
+                          }}>
                           회사/조직
                         </label>
                         <input
@@ -249,16 +246,28 @@ export default function ContactPage() {
                           name="company"
                           value={formData.company}
                           onChange={handleChange}
-                          className="w-full px-5 py-4 bg-white/[0.02] border border-white/10 rounded-xl focus:outline-none focus:border-primary transition-colors"
+                          style={{
+                            paddingLeft: '15px',
+                            paddingRight: '15px',
+                            paddingTop: '2px',
+                            paddingBottom: '2px',
+                            borderRadius: '8px',
+                          }}
+                          className="w-full px-5 py-4 bg-white/2 border border-white/10  focus:outline-none focus:border-primary transition-colors"
                           placeholder="회사명 (선택사항)"
                         />
                       </div>
 
-                      <div>
+                      <div
+                        style={{
+                          marginBottom: '16px',
+                        }}>
                         <label
                           htmlFor="message"
                           className="block text-sm font-medium mb-3"
-                        >
+                          style={{
+                            marginBottom: '4px',
+                          }}>
                           메시지 *
                         </label>
                         <textarea
@@ -268,7 +277,14 @@ export default function ContactPage() {
                           rows={6}
                           value={formData.message}
                           onChange={handleChange}
-                          className="w-full px-5 py-4 bg-white/[0.02] border border-white/10 rounded-xl focus:outline-none focus:border-primary transition-colors resize-none"
+                          style={{
+                            paddingLeft: '15px',
+                            paddingRight: '15px',
+                            paddingTop: '2px',
+                            paddingBottom: '2px',
+                            borderRadius: '8px',
+                          }}
+                          className="w-full px-5 py-4 bg-white/2 border border-white/10  focus:outline-none focus:border-primary transition-colors resize-none"
                           placeholder="협업하고 싶은 부분에 대해 알려주세요..."
                         />
                       </div>
@@ -277,8 +293,7 @@ export default function ContactPage() {
                         <motion.p
                           initial={{ opacity: 0, y: -10 }}
                           animate={{ opacity: 1, y: 0 }}
-                          className="text-red-500 text-sm"
-                        >
+                          className="text-red-500 text-sm">
                           {error}
                         </motion.p>
                       )}
@@ -287,15 +302,15 @@ export default function ContactPage() {
                         <button
                           type="submit"
                           disabled={isSubmitting}
-                          className="w-full py-4 bg-primary text-white font-semibold rounded-xl hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-                        >
+                          style={{
+                            paddingTop: '4px',
+                            paddingBottom: '4px',
+                            marginBottom: '100px',
+                          }}
+                          className="w-full py-4 bg-primary text-white font-semibold rounded-xl hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2">
                           {isSubmitting ? (
                             <>
-                              <svg
-                                className="w-5 h-5 animate-spin"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                              >
+                              <svg className="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
                                 <circle
                                   className="opacity-25"
                                   cx="12"
@@ -315,12 +330,7 @@ export default function ContactPage() {
                           ) : (
                             <>
                               메시지 보내기
-                              <svg
-                                className="w-5 h-5"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
+                              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path
                                   strokeLinecap="round"
                                   strokeLinejoin="round"

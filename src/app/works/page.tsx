@@ -1,99 +1,97 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import FadeIn from "@/components/animations/FadeIn";
-import PageTransition from "@/components/animations/PageTransition";
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import FadeIn from '@/components/animations/FadeIn';
+import PageTransition from '@/components/animations/PageTransition';
 
-const categories = ["All", "Mobile App", "Web"];
+const categories = ['All', 'Mobile App', 'Web'];
 
 const projects = [
   {
     id: 1,
-    title: "로또 연구소",
-    category: "Mobile App",
-    description: "로또 번호 분석 및 통계를 제공하는 스마트한 모바일 앱. 당첨 확률을 높이는 데이터 기반 인사이트를 제공합니다.",
-    tags: ["React Native", "TypeScript", "Analytics"],
-    color: "from-yellow-500 to-orange-500",
-    status: "출시 전",
+    title: '로또 연구소',
+    category: 'Mobile App',
+    description:
+      '로또 번호 분석 및 통계를 제공하는 스마트한 모바일 앱. 당첨 확률을 높이는 데이터 기반 인사이트를 제공합니다.',
+    tags: ['React Native', 'TypeScript', 'Analytics'],
+    color: 'from-yellow-500 to-orange-500',
+    status: '출시 전',
   },
   {
     id: 2,
-    title: "Currency Now",
-    category: "Mobile App",
-    description: "실시간 환율 정보를 한눈에. 글로벌 통화 변환 및 환율 알림 기능을 제공하는 필수 금융 앱입니다.",
-    tags: ["React Native", "TypeScript", "Finance API"],
-    color: "from-green-500 to-teal-500",
-    status: "개발 중",
+    title: 'Currency Now',
+    category: 'Mobile App',
+    description: '실시간 환율 정보를 한눈에. 글로벌 통화 변환 및 환율 알림 기능을 제공하는 필수 금융 앱입니다.',
+    tags: ['React Native', 'TypeScript', 'Finance API'],
+    color: 'from-green-500 to-teal-500',
+    status: '개발 중',
   },
   {
     id: 3,
-    title: "2026 메모 캘린더",
-    category: "Mobile App",
-    description: "50개국 지원, 세상에서 제일 간단한 메모 캘린더 앱입니다.",
-    tags: ["React Native", "TypeScript", "Calendar"],
-    color: "from-blue-500 to-purple-500",
-    status: "출시 전",
+    title: '2026 메모 캘린더',
+    category: 'Mobile App',
+    description: '50개국 지원, 세상에서 제일 간단한 메모 캘린더 앱입니다.',
+    tags: ['React Native', 'TypeScript', 'Calendar'],
+    color: 'from-blue-500 to-purple-500',
+    status: '출시 전',
   },
   {
     id: 4,
-    title: "JLPT 필수 단어장",
-    category: "Mobile App",
-    description: "일본어 능력시험 정복의 지름길. 퀴즈로 외우고, 반복으로 뇌에 새기는 단어 암기 앱입니다.",
-    tags: ["React Native", "TypeScript", "Education"],
-    color: "from-red-500 to-pink-500",
-    status: "개발 중",
+    title: 'JLPT 필수 단어장',
+    category: 'Mobile App',
+    description: '일본어 능력시험 정복의 지름길. 퀴즈로 외우고, 반복으로 뇌에 새기는 단어 암기 앱입니다.',
+    tags: ['React Native', 'TypeScript', 'Education'],
+    color: 'from-red-500 to-pink-500',
+    status: '개발 중',
   },
   {
     id: 5,
-    title: "마지막 금연",
-    category: "Mobile App",
-    description: "이번엔 진짜 끊는다. 당신의 마지막 금연을 응원하는 동반자 앱입니다.",
-    tags: ["React Native", "TypeScript", "Health"],
-    color: "from-emerald-500 to-cyan-500",
-    status: "개발 중",
+    title: '마지막 금연',
+    category: 'Mobile App',
+    description: '이번엔 진짜 끊는다. 당신의 마지막 금연을 응원하는 동반자 앱입니다.',
+    tags: ['React Native', 'TypeScript', 'Health'],
+    color: 'from-emerald-500 to-cyan-500',
+    status: '개발 중',
   },
   {
     id: 6,
-    title: "마지막 금주",
-    category: "Mobile App",
-    description: "오늘부터 술 끊는다. 건강한 내일을 위한 마지막 금주 도전 앱입니다.",
-    tags: ["React Native", "TypeScript", "Health"],
-    color: "from-violet-500 to-fuchsia-500",
-    status: "개발 중",
+    title: '마지막 금주',
+    category: 'Mobile App',
+    description: '오늘부터 술 끊는다. 건강한 내일을 위한 마지막 금주 도전 앱입니다.',
+    tags: ['React Native', 'TypeScript', 'Health'],
+    color: 'from-violet-500 to-fuchsia-500',
+    status: '개발 중',
   },
   {
     id: 7,
-    title: "Depick",
-    category: "Mobile App",
-    description: "정밀한 매칭으로 만남 성공률 UP. 남녀노소 누구나 새로운 인연을 만드는 데이팅 & 친구 네트워킹 앱입니다.",
-    tags: ["React Native", "TypeScript", "Social", "Networking"],
-    color: "from-rose-500 to-orange-400",
-    status: "개발 중",
+    title: 'Depick',
+    category: 'Mobile App',
+    description:
+      '정밀한 매칭으로 만남 성공률 UP. 남녀노소 누구나 새로운 인연을 만드는 데이팅 & 친구 네트워킹 앱입니다.',
+    tags: ['React Native', 'TypeScript', 'Social', 'Networking'],
+    color: 'from-rose-500 to-orange-400',
+    status: '개발 중',
   },
 ];
 
 export default function WorksPage() {
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState('All');
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   const filteredProjects =
-    selectedCategory === "All"
-      ? projects
-      : projects.filter((p) => p.category === selectedCategory);
+    selectedCategory === 'All' ? projects : projects.filter((p) => p.category === selectedCategory);
 
   return (
     <PageTransition>
-      <section style={{ paddingTop: '160px' }} className="min-h-screen pb-20 px-6 bg-background">
+      <section
+        style={{ paddingTop: '160px', paddingBottom: '200px', paddingLeft: '10px', paddingRight: '10px' }}
+        className="min-h-screen pb-20 px-6 bg-background">
         <div className="max-w-7xl mx-auto">
           <FadeIn className="mb-16">
-            <span className="text-primary text-sm font-medium uppercase tracking-wider">
-              Our Works
-            </span>
-            <h1 className="text-5xl md:text-6xl font-bold mt-4 mb-6">
-              프로젝트
-            </h1>
-            <p className="text-muted text-lg max-w-2xl">
+            <span className="text-primary text-sm font-medium uppercase tracking-wider">Our Works</span>
+            <h1 className="text-5xl md:text-6xl font-bold mt-4 mb-6">프로젝트</h1>
+            <p className="text-muted text-lg max-w-2xl" style={{ marginBottom: '14px' }}>
               우리가 재밌게 만들고 있는 프로젝트들입니다.
               <br />
               현재 열심히 개발 중이며, 곧 만나볼 수 있습니다.
@@ -102,17 +100,22 @@ export default function WorksPage() {
 
           {/* Category Filter */}
           <FadeIn delay={0.2} className="mb-12">
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3" style={{ marginBottom: '14px' }}>
               {categories.map((category) => (
                 <button
+                  style={{
+                    paddingRight: '12px',
+                    paddingTop: '4px',
+                    paddingBottom: '4px',
+                    paddingLeft: '12px',
+                  }}
                   key={category}
                   onClick={() => setSelectedCategory(category)}
                   className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                     selectedCategory === category
-                      ? "bg-primary text-white"
-                      : "bg-white/5 text-muted hover:bg-white/10 hover:text-foreground"
-                  }`}
-                >
+                      ? 'bg-primary text-white'
+                      : 'bg-white/5 text-muted hover:bg-white/10 hover:text-foreground'
+                  }`}>
                   {category}
                 </button>
               ))}
@@ -120,10 +123,7 @@ export default function WorksPage() {
           </FadeIn>
 
           {/* Projects Grid */}
-          <motion.div
-            layout
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
-          >
+          <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <AnimatePresence mode="popLayout">
               {filteredProjects.map((project, index) => (
                 <motion.div
@@ -136,29 +136,47 @@ export default function WorksPage() {
                   onMouseEnter={() => setHoveredId(project.id)}
                   onMouseLeave={() => setHoveredId(null)}
                   className="group relative"
-                >
-                  <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
+                  style={{ padding: '8px' }}>
+                  <div className="relative aspect-4/3 rounded-2xl overflow-hidden border border-white/10 bg-white/2">
                     {/* Gradient Background */}
                     <div
-                      className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-20 group-hover:opacity-40 transition-opacity duration-500`}
+                      className={`absolute inset-0 bg-linear-to-br ${project.color} opacity-20 group-hover:opacity-40 transition-opacity duration-500`}
                     />
 
                     {/* Content */}
-                    <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-between" style={{ padding: '24px' }}>
+                    <div
+                      className="absolute inset-0 p-6 md:p-8 flex flex-col justify-between"
+                      style={{ padding: '24px' }}>
                       <div className="flex flex-wrap items-start justify-between gap-2">
-                        <span className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-xs font-medium">
+                        <span
+                          className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-xs font-medium"
+                          style={{
+                            paddingRight: '12px',
+                            paddingTop: '8px',
+                            paddingBottom: '8px',
+                            paddingLeft: '12px',
+                          }}>
                           {project.category}
                         </span>
-                        <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-xs font-medium whitespace-nowrap">
+                        <span
+                          className="px-3 py-1 bg-primary/20 text-primary rounded-full text-xs font-medium whitespace-nowrap"
+                          style={{
+                            paddingRight: '12px',
+                            paddingTop: '8px',
+                            paddingBottom: '8px',
+                            paddingLeft: '12px',
+                          }}>
                           {project.status}
                         </span>
                       </div>
 
                       <div>
-                        <h3 className="text-2xl md:text-3xl font-bold mb-3 text-foreground group-hover:text-gradient transition-colors">
+                        <h3
+                          className="text-2xl md:text-3xl font-bold mb-3 text-foreground group-hover:text-gradient transition-colors"
+                          style={{ marginBottom: '6px' }}>
                           {project.title}
                         </h3>
-                        <p className="text-muted mb-4 leading-relaxed">
+                        <p className="text-muted mb-4 leading-relaxed" style={{ marginBottom: '10px' }}>
                           {project.description}
                         </p>
                         <div className="flex flex-wrap gap-2">
@@ -166,7 +184,12 @@ export default function WorksPage() {
                             <span
                               key={tag}
                               className="px-3 py-1 bg-white/5 rounded-full text-xs text-muted"
-                            >
+                              style={{
+                                paddingRight: '10px',
+                                paddingTop: '4px',
+                                paddingBottom: '4px',
+                                paddingLeft: '10px',
+                              }}>
                               {tag}
                             </span>
                           ))}
@@ -189,20 +212,28 @@ export default function WorksPage() {
           </motion.div>
 
           {filteredProjects.length === 0 && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center py-20"
-            >
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center py-20">
               <p className="text-muted text-lg">해당 카테고리의 프로젝트가 없습니다.</p>
             </motion.div>
           )}
 
           {/* Coming Soon Notice */}
           <FadeIn delay={0.4} className="mt-16 text-center">
-            <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/[0.02] border border-white/10 rounded-full">
+            <div
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white/2 border border-white/10 rounded-full"
+              style={{
+                width: '230px',
+                paddingLeft: '10px',
+                paddingRight: '10px',
+                paddingTop: '4px',
+                paddingBottom: '4px',
+                marginTop: '14px',
+              }}>
               <motion.div
                 animate={{ scale: [1, 1.2, 1] }}
+                style={{
+                  marginLeft: '5px',
+                }}
                 transition={{ duration: 2, repeat: Infinity }}
                 className="w-2 h-2 bg-primary rounded-full"
               />
